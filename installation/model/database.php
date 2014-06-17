@@ -402,7 +402,7 @@ class InstallationModelDatabase extends JModelBase
 		{
 			return false;
 		}
-
+		
 		// Attempt to update the table #__schema.
 		$pathPart = JPATH_ADMINISTRATOR . '/components/com_admin/sql/updates/';
 

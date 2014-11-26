@@ -12,9 +12,7 @@ defined('JPATH_BASE') or die;
 /**
  * Plugin class for logout redirect handling.
  *
- * @package     Joomla.Plugin
- * @subpackage  System.logout
- * @since       1-6
+ * @since  1.6
  */
 class PlgSystemLogout extends JPlugin
 {
@@ -39,7 +37,7 @@ class PlgSystemLogout extends JPlugin
 		parent::__construct($subject, $config);
 
 		$input = JFactory::getApplication()->input;
-		$hash  = JApplication::getHash('PlgSystemLogout');
+		$hash  = JApplicationHelper::getHash('PlgSystemLogout');
 
 		if (JFactory::getApplication()->isSite() && $input->cookie->getString($hash))
 		{
@@ -69,7 +67,7 @@ class PlgSystemLogout extends JPlugin
 		if (JFactory::getApplication()->isSite())
 		{
 			// Create the cookie.
-			$hash = JApplication::getHash('PlgSystemLogout');
+			$hash = JApplicationHelper::getHash('PlgSystemLogout');
 			$conf = JFactory::getConfig();
 			$cookie_domain 	= $conf->get('cookie_domain', '');
 			$cookie_path 	= $conf->get('cookie_path', '/');
